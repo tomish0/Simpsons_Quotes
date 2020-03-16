@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-
-import Quote from "./Quote";
+import QuoteForm from "./Components/QuoteForm";
+import Quote from "./Components/Quote";
 
 class App extends Component {
   state = {
     working: true
   };
-  
+
   render() {
-    console.log(this.state.working)
+    console.log(this.state.working);
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className={this.state.working ? "App-logo" : "App-logo-stop"} alt="logo" />
+          <img
+            src={logo}
+            className={this.state.working ? "App-logo" : "App-logo-stop"}
+            alt="logo"
+          />
           <h1 className="App-title">Simpsons Quotes</h1>
         </header>
-        <button onClick={() => this.setState({ working : !this.state.working})}>
-        Click me
+        <QuoteForm />
+        <button onClick={() => this.setState({ working: !this.state.working })}>
+          Click me
         </button>
         <Quote
           quote="I believe the children are the future... Unless we stop them now!"
@@ -33,7 +38,6 @@ class App extends Component {
       </div>
     );
   }
-  
 }
 
 export default App;
